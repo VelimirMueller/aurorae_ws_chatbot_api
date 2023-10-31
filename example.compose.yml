@@ -1,0 +1,11 @@
+services:
+  web:
+    image: 'flask_docker_app_image'
+    build: .
+    environment:
+      FLASK_DEBUG: 1
+      FLASK_ENV: development
+      FLASK_APP: app.py
+    ports:
+      - "5000:5000"
+    network_mode: "bridge"

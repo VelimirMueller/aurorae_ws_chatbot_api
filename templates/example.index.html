@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GTP4ALL Chatbot</title>
+</head>
+<body>
+<h1>This is a Flask App containerised with Docker</h1>
+
+<div style="display: flex; flex-direction: row; width: 100%;">
+    <div style="min-width: 300px; width: 50%; background-color:rgba(255, 125, 25, 0.5)">
+         <h2>JSON API DEMO</h2>
+         <button id="btn">api call</button>
+         <div id="json"></div>
+    </div>
+
+     <div style="min-width: 300px; width: 50%; background-color:rgba(55, 125, 225, 0.5)">
+         <h2>Chatbot Websocket Demo</h2>
+         <div id="log"></div>
+         <br>
+          <form id="form">
+              <label for="text">Input: </label>
+              <input type="text" id="text" autofocus>
+          </form>
+     </div>
+</div>
+</body>
+
+<script>
+  const log = (text, color) => {
+    document.getElementById('log').innerHTML += `<span style="color: ${color}">${text}</span><br>`;
+  };
+
+  let socket;
+  if (!socket) {
+    socket = new WebSocket('ws://' + location.host + '/api_ws');
+  }
+  socket.addEventListener('message', ev => {
+    log('<<< ' + ev.data, 'blue');
+  });
+  document.getElementById('form').onsubmit = ev => {
+    ev.preventDefault();
+    const textField = document.getElementById('text');
+    log('>>> ' + textField.value, 'red');
+    socket.send(textField.value);
+    textField.value = '';
+  };
+</script>
+
+<script>
+    let isLoading = false;
+
+    const json_api = (text, color) => {
+        document.getElementById('json').innerHTML += `<span style="color: ${color}">${text}</span><br>`;
+      };
+
+    function test_json_api() {
+      isLoading = true
+      json_api('awaiting data', '#fa5543')
+      fetch('http://' + location.host + '/api', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+         },
+         body: JSON.stringify({ "data": 'hello KI' })
+         })
+
+          .then(response => response.json())
+          .then(response => {
+            console.log(JSON.stringify(response))
+            json_api(JSON.stringify(response), '#0a0a0a')
+            }
+           )
+           .catch((err) => {
+              console.warning(err)
+           })
+           .finally(() => {
+             isLoading = !isLoading
+           })
+
+    };
+    document.getElementById('btn').addEventListener('click', (event) => {
+      console.log(event);
+      test_json_api();
+    });
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        console.log(event);
+    });
+</script>
+</html>
