@@ -30,7 +30,7 @@ def single_response(user_input):
 
 def chat_session(user_input, model, socket):
     if user_input == 'exit':
-        model.send('printing previous chat session, restarting session')
+        socket.send('printing previous chat session, restarting session')
         socket.send(model.current_chat_session)
     else:
         print('generating websocket message: ')
