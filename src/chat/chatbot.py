@@ -1,7 +1,6 @@
 from flask import jsonify
 from src.model import api_model
 
-
 def single_response(user_input):
     with api_model.chat_session():
         print('json_fired: /api')
