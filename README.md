@@ -17,7 +17,7 @@ run as python scrippt:
 
 run with gunicorn:
 
-`gunicorn --bind 0.0.0.0:5000 --workers="1" wsgi:app`
+`gunicorn --bind 0.0.0.0:5000 --workers="4" wsgi:app`
 
 (you can use another local address or port if needed or wanted)
 
