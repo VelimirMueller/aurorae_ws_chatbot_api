@@ -1,4 +1,4 @@
-### Python Flask GTP4ALL powered websocket chat client
+### Python Flask GTP4ALL powered websocket chat client (still in development)
 
 - define port and host in .env
 - for docker usage may need to adjust example.Dockerfile and example.compose.yml 
@@ -21,6 +21,7 @@ run with gunicorn:
 
 (you can use another local address or port if needed or wanted)
 
+Check out the aurorae frontend client here: https://github.com/VelimirMueller/aurorae-frontend
 
 LICENSE:
 
