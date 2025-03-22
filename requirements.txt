@@ -14,7 +14,7 @@ Flask-Cors==4.0.2
 flask-sock==0.7.0
 frozenlist==1.4.0
 gpt4all==1.0.12
-gunicorn==22.0.0
+gunicorn==23.0.0
 h11==0.14.0
 httpcore==0.18.0
 httpx==0.25.0
