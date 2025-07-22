@@ -5,6 +5,11 @@
 
 usage:
 
+install python 3.10 first
+```bash
+ sudo apt install python3.10 python3.10-venv python3.10-dev
+```
+
 - open terminal and navigate to the app's root directory
 - create a python3 virtual environment and activate it
 - now run in terminal:

@@ -12,7 +12,7 @@ from src.api import json_api_bp
 from src.model import ws_model
 from src.chat import chat_session
 
-# load .env variables
+# load ..env variables
 environ = dotenv_values('.env')
 
 # Initialize basic flask app with websockets and cors headers set
