@@ -25,11 +25,20 @@ jobs:
           pip install -r requirements.txt
           pip install pytest pytest-cov
 
-      - name: Run tests with coverage
+      - name: Run tests
         env:
-          HOST: 'localhost'
-          PORT: '5000'
-          MODEL_API: 'Meta-Llama-3-8B-Instruct.Q4_0.gguf'
-          MODEL_WS: 'Meta-Llama-3-8B-Instruct.Q4_0.gguf'
+          HOST: localhost
+          PORT: 5000
+          MODEL_API: Meta-Llama-3-8B-Instruct.Q4_0.gguf
+          MODEL_WS: Meta-Llama-3-8B-Instruct.Q4_0.gguf
         run: |
-          pytest --cov=src --cov-fail-under=90
+          pytest --cov=src
+
+      - name: Run coverage
+        env:
+          HOST: localhost
+          PORT: 5000
+          MODEL_API: Meta-Llama-3-8B-Instruct.Q4_0.gguf
+          MODEL_WS: Meta-Llama-3-8B-Instruct.Q4_0.gguf
+        run: |
+          pytest --cov-fail-under=90
