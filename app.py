@@ -18,6 +18,7 @@ environ = dotenv_values('.env')
 # Initialize basic flask app with websockets and cors headers set
 app = Flask(__name__)
 cors = CORS(app)
+
 print('app initialised')
 
 # Initialize routes

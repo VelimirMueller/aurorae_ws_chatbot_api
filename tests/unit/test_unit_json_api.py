@@ -1,5 +1,5 @@
 # tests/test_api_route.py
-from tests.fixtures.json_api_blueprint_fixture import client
+from tests.fixtures.json_api_client_fixture import client
 
 def test_json_api_gets_called__client_submits_valid_prompt__json_api_returns_valid_json_and_status_code_200(client, monkeypatch):
     response = client.post("/api", json={"message": "Hello"})
