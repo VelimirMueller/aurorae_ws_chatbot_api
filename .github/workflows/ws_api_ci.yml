@@ -1,4 +1,4 @@
-name: AI Chatbot WS CI
+name: AI chatbot websocket server CI
 
 on:
   push:
