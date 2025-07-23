@@ -5,8 +5,15 @@ compose.yml
 .venv310/
 example.Dockerfile
 example.*
+.coverage
+*.deb
+src/model/binaries/*.gguf
 
 src/api/__pycache__/
 src/chat/__pycache__/
 src/model/__pycache__/
 src/routes/__pycache__/
+
+tests/__pycache__/
+tests/unit/__pycache__/
+tests/fixtures/__pycache__/
