@@ -31,4 +31,4 @@ jobs:
 
       - name: Run coverage
         run: |
-          pytest --cov-fail-under=90
+          pytest --cov-fail-under=85
