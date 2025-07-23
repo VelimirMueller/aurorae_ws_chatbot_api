@@ -1,0 +1,12 @@
+.env
+Dockerfile
+compose.yml
+.idea/
+.venv310/
+example.Dockerfile
+example.*
+
+src/api/__pycache__/
+src/chat/__pycache__/
+src/model/__pycache__/
+src/routes/__pycache__/
