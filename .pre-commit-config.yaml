@@ -6,4 +6,5 @@ repos:
         name: flake8 (local)
         entry: flake8
         language: system
-        types: [python]
+        types: [ python ]  # ✅ Ensures only .py files are checked
+        args: [ "--config=.flake8" ]
