@@ -24,7 +24,7 @@ flask-sock==0.7.0
 frozenlist==1.4.0
 gpt4all==2.8.2
 gunicorn==22.0.0
-h11==0.16.0
+h11<0.15
 httpcore==0.18.0
 httpx==0.25.0
 identify==2.6.12
