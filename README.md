@@ -1,5 +1,6 @@
-# 🧠 Aurorae Chat API – Flask + GPT4All WebSocket Chat Backend
-
+## 🧠 Aurorae Chat API 
+#### Flask + GPT4All WebSocket Chat Server
+___
 🚧 **Project is in active development**  
 A lightweight, extensible Flask backend serving real-time chat over WebSockets, powered by [GPT4All](https://github.com/nomic-ai/gpt4all). Pairs perfectly with the [Aurorae frontend client](https://github.com/VelimirMueller/aurorae-frontend).
 
