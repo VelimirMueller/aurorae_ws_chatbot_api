@@ -1,29 +1,99 @@
-### Python Flask GTP4ALL powered websocket chat client (still in development)
+# 🧠 Aurorae Chat API – Flask + GPT4All WebSocket Chat Backend
 
-- define port and host in .env
-- for docker usage may need to adjust example.Dockerfile and example.compose.yml 
+🚧 **Project is in active development**  
+A lightweight, extensible Flask backend serving real-time chat over WebSockets, powered by [GPT4All](https://github.com/nomic-ai/gpt4all). Pairs perfectly with the [Aurorae frontend client](https://github.com/VelimirMueller/aurorae-frontend).
 
-usage:
+---
 
-install python 3.10 first
+## ✨ Features
+
+- ✅ WebSocket API for real-time streaming chat
+- ✅ JSON API endpoint for simple REST usage
+- ✅ GTP4All backend integration (local LLMs)
+- ✅ Configurable via `.env` file
+- ✅ Python 3.10+ support
+- ✅ Docker & `gunicorn` compatible
+- ✅ Modular & extensible architecture
+
+---
+
+## ⚙️ Setup & Usage
+
+### 1. 📦 Python Installation
+
+Install Python 3.10+ and dependencies:
+
 ```bash
  sudo apt install python3.10 python3.10-venv python3.10-dev
+````
+
+Clone the repo and create a virtual environment:
+```bash
+ git clone https://github.com/VelimirMueller/aurorae_ws_chatbot_api.git
+ cd aurorae_ws_chatbot_api
+ python3.10 -m venv .venv
+ source .venv/bin/activate
+ pip install -r requirements.txt
 ```
 
-- open terminal and navigate to the app's root directory
-- create a python3 virtual environment and activate it
-- now run in terminal:
+Start the server:
+```bash
+  python3 app.py
+```
 
-`pip install -r requirements.txt`
+Or with gunicorn for production:
+```bash
+  gunicorn --bind 0.0.0.0:5000 --workers=4 wsgi:app
+```
+Configure the address/port in your .env file if needed.
 
-run as python scrippt:
 
-`python3 app.py`
+## 2. 🐳 Docker (Optional)
 
-run with gunicorn:
+### Use Docker for containerized development:
 
-`gunicorn --bind 0.0.0.0:5000 --workers="4" wsgi:app`
+```bash
+  cp example.Dockerfile Dockerfile
+  cp example.compose.yml docker-compose.yml
 
-(you can use another local address or port if needed or wanted)
+  # Customize .env and docker-compose if needed
+  docker compose up --build
+```
 
-Check out the aurorae frontend client here: https://github.com/VelimirMueller/aurorae-frontend
+## 3. 🔧 Configuration
+   
+### Create a .env file in the project root:
+
+```.env
+  HOST=localhost
+  PORT=5000
+```
+
+## 4. 🧪 Development
+
+### Linting, Formatting & Testing:
+
+```bash
+  # Format with Black & isort
+ black src tests
+ isort src tests
+ 
+ # Lint with flake8
+ flake8 src tests
+ 
+ # Run tests
+ pytest
+```
+
+## 🌐 Frontend
+
+### Looking for the UI?
+
+A lightweight chat interface to interact easily with the ws server
+
+👉 (Aurorae Chat Frontend -Vue)[https://github.com/VelimirMueller/aurorae_chat_frontend]
+
+
+## 📄 License
+
+MIT License © 2025 Velimir Müller
