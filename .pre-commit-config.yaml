@@ -1,0 +1,12 @@
+# .pre-commit-config.yaml
+repos:
+  - repo: local
+    hooks:
+      - id: flake8
+        name: flake8 (local)
+        entry: flake8
+        language: system
+        types: [python]
+        files: ^(src/|tests/).*\.(py)$
+        args: [--config=.flake8]
+        
