@@ -27,9 +27,7 @@ jobs:
 
       - name: Run linting
         run: |
-          black src tests
-          isort src tests
-          flake8 src tests
+          flake8
           
 
       - name: Run tests
