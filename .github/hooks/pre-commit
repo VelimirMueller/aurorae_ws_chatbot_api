@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# test
 echo "Running pre-commit checks..."
 
 # Example: run code formatter
