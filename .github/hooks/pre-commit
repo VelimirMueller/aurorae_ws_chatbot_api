@@ -1,0 +1,17 @@
+#!/bin/sh
+
+echo "Running pre-commit checks..."
+
+# Example: run code formatter
+black src tests
+
+# Example: check for linting issues
+flake8 src tests
+
+# Optionally prevent commit if something fails
+if [ $? -ne 0 ]; then
+  echo "Pre-commit checks failed. Commit aborted."
+  exit 1
+fi
+
+echo "All checks passed."
