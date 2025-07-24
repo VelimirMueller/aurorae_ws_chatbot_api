@@ -27,7 +27,7 @@ jobs:
 
       - name: Run linting
         run: |
-          flake8
+          flake8 src tests
           
 
       - name: Run tests
