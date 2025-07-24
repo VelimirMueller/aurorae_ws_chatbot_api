@@ -1,7 +1,10 @@
 from unittest.mock import MagicMock, patch
-from src.chat import chat_session, single_response
-from flask import json, Flask
+
 import pytest
+from flask import Flask, json
+
+from src.chat import chat_session, single_response
+
 
 # Import your function, adjust the import path accordingly:
 # from src.chat_module import chat_session
@@ -10,6 +13,7 @@ def app():
     app = Flask(__name__)
     app.config["TESTING"] = True
     return app
+
 
 def test_chat_session_exit():
     model = MagicMock()
@@ -20,7 +24,7 @@ def test_chat_session_exit():
 
     # Check socket.send calls on exit input
     assert socket.send.call_count == 2
-    socket.send.assert_any_call('printing previous chat session, restarting session')
+    socket.send.assert_any_call("printing previous chat session, restarting session")
     socket.send.assert_any_call("Previous chat data")
 
 
@@ -52,5 +56,8 @@ def test_chat_session_non_exit():
                 assert response.status_code == 200
                 assert "data" in data
                 assert data["data"]["request"] == user_input
-                assert data["data"]["server_response"] == "Received request, answering with json"
+                assert (
+                    data["data"]["server_response"]
+                    == "Received request, answering with json"
+                )
                 assert data["data"]["ai_response"] == "AI generated response"
