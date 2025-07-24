@@ -25,6 +25,10 @@ jobs:
           pip install -r requirements.txt
           pip install pytest pytest-cov
 
+      - name: Run linting
+        run: |
+          flake8
+
       - name: Run tests
         run: |
           pytest --cov=src
