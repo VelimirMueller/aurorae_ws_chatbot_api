@@ -1,16 +1,18 @@
 from dotenv import dotenv_values
+
 # Initialize Flask
 from flask import Flask
 from flask_cors import CORS
 from flask_sock import Sock
 
-# Initialize routes and api
-from src.routes import home_bp
 from src.api import json_api_bp
+from src.chat import chat_session
 
 # Initialize model
 from src.model import ws_model
-from src.chat import chat_session
+
+# Initialize routes and api
+from src.routes import home_bp
 
 # load ..env variables
 environ = dotenv_values('.env')

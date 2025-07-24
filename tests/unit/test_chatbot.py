@@ -44,10 +44,10 @@ def test_chat_session_non_exit():
         user_input = "Hello"
 
         # Mock api_model in the module where single_response is defined
-        with patch("src.chat.api_model") as mock_api_model:
-            mock_api_model.chat_session.return_value.__enter__.return_value = None
-            mock_api_model.chat_session.return_value.__exit__.return_value = None
-            mock_api_model.generate.return_value = "AI generated response"
+        with patch("src.chat.api_model") as m:
+            m.chat_session.return_value.__enter__.return_value = None
+            m.chat_session.return_value.__exit__.return_value = None
+            m.generate.return_value = "AI generated response"
 
             with app.app_context():
                 response = single_response(user_input)
