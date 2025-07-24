@@ -6,6 +6,6 @@ repos:
         name: flake8 (local)
         entry: flake8
         language: system
-        types: [ python ]
-        files: ^(src|tests)/.*\.py$  # ✅ Only checks src/ and tests/ Python files
-        args: [ "--config=.flake8" ]
+        types: [python]
+        files: ^(src/|tests/).*\.(py)$
+        args: [--config=.flake8]
