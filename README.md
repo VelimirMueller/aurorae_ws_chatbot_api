@@ -1,6 +1,6 @@
 ## Project health
 
-![WS API CI](https://github.com/VelimirMueller/aurorae_ws_chatbot_api/.github/workflows/WS%20API%20CI/badge.svg)
+![AI chatbot websocket server CI](https://github.com/VelimirMueller/aurorae_ws_chatbot_api/workflows/AI chatbot websocket server CI/badge.svg)
 ___
 
 ## 🧠 Aurorae Chat API 
