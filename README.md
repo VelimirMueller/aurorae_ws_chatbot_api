@@ -1,3 +1,9 @@
+## Project health
+
+![Workflow Status](https://github.com/VelimirMueller/aurorae_ws_chatbot_api/actions/workflows/<workflow_file>.yml/badge.svg)
+
+___
+
 ## 🧠 Aurorae Chat API 
 #### Flask + GPT4All WebSocket Chat Server
 ___
