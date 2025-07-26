@@ -1,7 +1,6 @@
 ## Project health
 
-![Workflow Status](https://github.com/VelimirMueller/aurorae_ws_chatbot_api/.github/workflows/ws_api_ci.yml/badge.svg)
-
+![WS API CI](https://github.com/VelimirMueller/aurorae_ws_chatbot_api/workflows/WS%20API%20CI/badge.svg)
 ___
 
 ## 🧠 Aurorae Chat API 
