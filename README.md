@@ -1,105 +1,150 @@
-## Project health
+<div align="center">
 
-![AI chatbot websocket server CI](https://github.com/VelimirMueller/aurorae_ws_chatbot_api/workflows/AI%20chatbot%20websocket%20server%20CI/badge.svg)
-___
+# Aurorae Chat API
 
-## 🧠 Aurorae Chat API 
-#### Flask + GPT4All WebSocket Chat Server
-___
-🚧 **Project is in active development**  
-A lightweight, extensible Flask backend serving real-time chat over WebSockets, powered by [GPT4All](https://github.com/nomic-ai/gpt4all). Pairs perfectly with the [Aurorae frontend client](https://github.com/VelimirMueller/aurorae-frontend).
+**A lightweight, real-time WebSocket chat server powered by GPT4All**
 
----
+[![CI](https://github.com/VelimirMueller/aurorae_ws_chatbot_api/actions/workflows/ws_api_ci.yml/badge.svg)](https://github.com/VelimirMueller/aurorae_ws_chatbot_api/actions/workflows/ws_api_ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/VelimirMueller/aurorae_ws_chatbot_api/blob/main/LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](#-docker)
 
-## ✨ Features
-
-- ✅ WebSocket API for real-time streaming chat
-- ✅ JSON API endpoint for simple REST usage
-- ✅ GTP4All backend integration (local LLMs)
-- ✅ Configurable via `.env` file
-- ✅ Python 3.10+ support
-- ✅ Docker & `gunicorn` compatible
-- ✅ Modular & extensible architecture
+</div>
 
 ---
 
-## ⚙️ Setup & Usage
+> **Note:** This project is under active development. Expect breaking changes until a stable release.
 
-### 1. 📦 Python Installation
+## Table of Contents
 
-Install Python 3.10+ and dependencies:
+- [Overview](#overview)
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Docker](#-docker)
+- [Configuration](#-configuration)
+- [Development](#-development)
+- [Project Structure](#-project-structure)
+- [Frontend](#-frontend)
+- [License](#-license)
 
-```bash
- sudo apt install python3.10 python3.10-venv python3.10-dev
-````
+## Overview
 
-Clone the repo and create a virtual environment:
-```bash
- git clone https://github.com/VelimirMueller/aurorae_ws_chatbot_api.git
- cd aurorae_ws_chatbot_api
- python3.10 -m venv .venv
- source .venv/bin/activate
- pip install -r requirements.txt
-```
+Aurorae Chat API is an extensible Flask backend that serves real-time chat over WebSockets, powered by [GPT4All](https://github.com/nomic-ai/gpt4all) for local LLM inference. It provides both a WebSocket endpoint for streaming responses and a JSON REST endpoint for simpler integrations.
 
-Start the server:
-```bash
-  python3 app.py
-```
+Pairs with the [Aurorae Chat Frontend](https://github.com/VelimirMueller/aurorae_chat_frontend) for a complete self-hosted chat experience.
 
-Or with gunicorn for production:
-```bash
-  gunicorn --bind 0.0.0.0:5000 --workers=4 wsgi:app
-```
-Configure the address/port in your .env file if needed.
+## Features
 
+- **Real-time streaming** — WebSocket API for token-by-token chat responses
+- **REST endpoint** — JSON API for simple request/response usage
+- **Local LLM inference** — GPT4All backend, no external API keys required
+- **Configurable** — Environment-based configuration via `.env`
+- **Production-ready** — Gunicorn + Docker support out of the box
+- **Modular architecture** — Clean separation of concerns for easy extension
 
-## 2. 🐳 Docker (Optional)
+## Getting Started
 
-### Use Docker for containerized development:
+### Prerequisites
 
-```bash
-  cp example.Dockerfile Dockerfile
-  cp example.compose.yml docker-compose.yml
+- Python 3.10 or higher
+- pip
+- (Optional) Docker & Docker Compose
 
-  # Customize .env and docker-compose if needed
-  docker compose up --build
-```
+### Installation
 
-## 3. 🔧 Configuration
-   
-### Create a .env file in the project root:
-
-```.env
-  HOST=localhost
-  PORT=5000
-```
-
-## 4. 🧪 Development
-
-### Linting, Formatting & Testing:
+Clone the repository and set up a virtual environment:
 
 ```bash
-  # Format with Black & isort
- black src tests
- isort src tests
- 
- # Lint with flake8
- flake8 src tests
- 
- # Run tests
- pytest
+git clone https://github.com/VelimirMueller/aurorae_ws_chatbot_api.git
+cd aurorae_ws_chatbot_api
+
+python3.10 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
 ```
 
-## 🌐 Frontend
+Start the development server:
 
-### Looking for the UI?
+```bash
+python3 app.py
+```
 
-A lightweight chat interface to interact easily with the ws server
+For production, use Gunicorn:
 
-👉 (Aurorae Chat Frontend -Vue)[https://github.com/VelimirMueller/aurorae_chat_frontend]
+```bash
+gunicorn --bind 0.0.0.0:5000 --workers=4 wsgi:app
+```
 
+### Docker
 
-## 📄 License
+Build and run with Docker Compose:
 
-MIT License © 2025 Velimir Müller
+```bash
+cp example.Dockerfile Dockerfile
+cp example.compose.yml docker-compose.yml
+cp example.env .env
+
+# Edit .env and docker-compose.yml to match your setup
+docker compose up --build
+```
+
+## Configuration
+
+Create a `.env` file in the project root (see `example.env` for reference):
+
+```env
+HOST=localhost
+PORT=5000
+```
+
+## Development
+
+### Linting & Formatting
+
+```bash
+# Format code
+black src tests
+isort src tests
+
+# Lint
+flake8 src tests
+```
+
+### Testing
+
+```bash
+# Run tests with coverage
+pytest --cov=src --cov-report=term-missing
+```
+
+CI runs linting and tests automatically on every push and pull request. See [`.github/workflows/ws_api_ci.yml`](.github/workflows/ws_api_ci.yml) for details.
+
+## Project Structure
+
+```
+aurorae_ws_chatbot_api/
+├── .github/workflows/   # CI pipeline
+├── src/                 # Application source code
+├── templates/           # HTML templates
+├── tests/               # Test suite
+├── app.py               # Development entry point
+├── wsgi.py              # Production WSGI entry point
+├── requirements.txt     # Python dependencies
+├── example.Dockerfile   # Docker build template
+├── example.compose.yml  # Docker Compose template
+└── example.env          # Environment variable template
+```
+
+## Frontend
+
+Looking for the UI? Check out the companion chat interface:
+
+**[Aurorae Chat Frontend](https://github.com/VelimirMueller/aurorae_chat_frontend)** — A lightweight Vue-based client for interacting with this server.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+© 2025 Velimir Müller
