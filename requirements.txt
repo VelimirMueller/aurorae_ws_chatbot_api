@@ -1,5 +1,5 @@
 aiohappyeyeballs==2.6.1
-aiohttp==3.10.11
+aiohttp==3.12.14
 aiosignal>=1.4.0
 annotated-types==0.6.0
 anyio==4.0.0
@@ -24,7 +24,7 @@ flask-sock==0.7.0
 frozenlist==1.4.0
 gpt4all==2.8.2
 gunicorn==22.0.0
-h11<0.15
+h11<0.17
 httpcore==0.18.0
 httpx==0.25.0
 identify==2.6.12
@@ -72,6 +72,6 @@ tqdm==4.66.3
 typing_extensions==4.8.0
 urllib3==2.5.0
 virtualenv==20.32.0
-Werkzeug==3.0.6
+Werkzeug==3.1.4
 wsproto==1.2.0
 yarl==1.12.0
