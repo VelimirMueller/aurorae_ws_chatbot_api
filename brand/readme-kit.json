@@ -1,0 +1,43 @@
+{
+  "group": "flagship",
+  "version": "v2",
+  "dividers": [
+    {"key": "what",   "index": "01", "title": "WHAT IT DOES", "caption": "ONE API. EVERY PROVIDER.", "art": "strip-flagship-1"},
+    {"key": "start",  "index": "02", "title": "QUICK START",  "caption": "NOTHING TO RUN. YET.", "art": "strip-flagship-2"},
+    {"key": "how",    "index": "03", "title": "HOW IT WORKS", "caption": "IN ONE SIDE, OUT THE OTHER.", "art": "strip-flagship-3"},
+    {"key": "usage",  "index": "04", "title": "USAGE",        "caption": "THE REFERENCE. CONDENSED.", "art": "strip-flagship-4"},
+    {"key": "status", "index": "05", "title": "STATUS",       "caption": "HONEST. NO CODE YET.", "art": "strip-flagship-5"}
+  ],
+  "panels": [
+    {"key": "stats", "type": "stats", "title": "THE GATEWAY IN NUMBERS", "items": [
+      {"value": "1", "label": "API, CHAT AND TEXT"},
+      {"value": "3", "label": "SCOPES: ADMIN, TENANT, USER"},
+      {"value": "2", "label": "PROVIDERS NAMED"},
+      {"value": "0", "label": "CODE ON MAIN"}
+    ]},
+    {"key": "features", "type": "cards", "title": "WHAT IT DOES", "items": [
+      {"title": "ONE API", "text": "Chat and text tasks behind one endpoint. The provider is chosen by env: Ollama locally, Anthropic or others in prod."},
+      {"title": "SCOPES", "text": "platform-admin, tenant, user. Services enforce the scope on the token, never the prompt."},
+      {"title": "AUDITED STREAM", "text": "Tokens stream over SSE. Every answer and tool call is audited."}
+    ]},
+    {"key": "start", "type": "terminal", "title": "QUICK START", "lines": [
+      "$ gh repo clone VelimirMueller/synthwerk-llm",
+      "$ cd synthwerk-llm",
+      "$ git checkout legacy-final",
+      "# the old Flask + GPT4All WebSocket demo"
+    ]},
+    {"key": "flow", "type": "flow", "title": "ONE REQUEST, LEFT TO RIGHT", "nodes": [
+      {"title": "CLIENTS", "sub": "widgets, SDK apps"},
+      {"title": "LLM GATEWAY", "sub": "this repo", "hot": true},
+      {"title": "PROVIDERS", "sub": "Ollama, Anthropic, …"},
+      {"title": "NATS BUS", "sub": "events, audited"}
+    ], "caption": "The gateway also reads the other services through read-only MCP tools."},
+    {"key": "status", "type": "status", "title": "WHAT IS TRUE TODAY", "rows": [
+      {"label": "Rewrite", "value": "planned, epic E3", "state": "wip"},
+      {"label": "Old code", "value": "tag legacy-final", "state": "ok"},
+      {"label": "Providers", "value": "Ollama, Anthropic, …", "state": "ok"},
+      {"label": "Streaming", "value": "SSE", "state": "ok"},
+      {"label": "Branching", "value": "main→dev, tag→stg, digest→prd", "state": "ok"}
+    ]}
+  ]
+}

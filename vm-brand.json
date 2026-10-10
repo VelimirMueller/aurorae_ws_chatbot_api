@@ -1,0 +1,7 @@
+{
+  "group": "flagship",
+  "tagline": "Local models in dev. Any provider in prod.",
+  "sublabel": "LLM GATEWAY · GO · SSE",
+  "bannerVersion": "v2",
+  "art": {"file": "v2/synthwerk-llm.png", "seed": 317}
+}

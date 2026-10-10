@@ -1,0 +1,17 @@
+{
+  "divider-what-v2.svg": "01 WHAT IT DOES. ONE API. EVERY PROVIDER.",
+  "divider-start-v2.svg": "02 QUICK START. NOTHING TO RUN. YET.",
+  "divider-how-v2.svg": "03 HOW IT WORKS. IN ONE SIDE, OUT THE OTHER.",
+  "divider-usage-v2.svg": "04 USAGE. THE REFERENCE. CONDENSED.",
+  "divider-status-v2.svg": "05 STATUS. HONEST. NO CODE YET.",
+  "stats-v2-dark.svg": "1 API, CHAT AND TEXT. 3 SCOPES: ADMIN, TENANT, USER. 2 PROVIDERS NAMED. 0 CODE ON MAIN",
+  "stats-v2-light.svg": "1 API, CHAT AND TEXT. 3 SCOPES: ADMIN, TENANT, USER. 2 PROVIDERS NAMED. 0 CODE ON MAIN",
+  "features-v2-dark.svg": "ONE API: Chat and text tasks behind one endpoint. The provider is chosen by env: Ollama locally, Anthropic or others in prod. SCOPES: platform-admin, tenant, user. Services enforce the scope on the token, never the prompt. AUDITED STREAM: Tokens stream over SSE. Every answer and tool call is audited",
+  "features-v2-light.svg": "ONE API: Chat and text tasks behind one endpoint. The provider is chosen by env: Ollama locally, Anthropic or others in prod. SCOPES: platform-admin, tenant, user. Services enforce the scope on the token, never the prompt. AUDITED STREAM: Tokens stream over SSE. Every answer and tool call is audited",
+  "start-v2-dark.svg": "Terminal: $ gh repo clone VelimirMueller/synthwerk-llm | $ cd synthwerk-llm | $ git checkout legacy-final | # the old Flask + GPT4All WebSocket demo",
+  "start-v2-light.svg": "Terminal: $ gh repo clone VelimirMueller/synthwerk-llm | $ cd synthwerk-llm | $ git checkout legacy-final | # the old Flask + GPT4All WebSocket demo",
+  "flow-v2-dark.svg": "CLIENTS -> LLM GATEWAY -> PROVIDERS -> NATS BUS. The gateway also reads the other services through read-only MCP tools.",
+  "flow-v2-light.svg": "CLIENTS -> LLM GATEWAY -> PROVIDERS -> NATS BUS. The gateway also reads the other services through read-only MCP tools.",
+  "status-v2-dark.svg": "Rewrite: planned, epic E3. Old code: tag legacy-final. Providers: Ollama, Anthropic, …. Streaming: SSE. Branching: main→dev, tag→stg, digest→prd",
+  "status-v2-light.svg": "Rewrite: planned, epic E3. Old code: tag legacy-final. Providers: Ollama, Anthropic, …. Streaming: SSE. Branching: main→dev, tag→stg, digest→prd"
+}
